@@ -34,10 +34,10 @@ var gniusBackground = new Class({
 
         window.addEvents({
             domready : function(){
-                gniusBackground();
+                that.gniusBackground();
             },
             resize   : function(){
-                gniusBackground();
+                that.gniusBackground();
             }
         });
     },
