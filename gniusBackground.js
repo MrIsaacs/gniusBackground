@@ -3,7 +3,7 @@
 
 script: gniusBackground.js
 
-version: 0.3.4
+version: 0.4.1
 
 name: gniusBackground
 
@@ -34,22 +34,23 @@ var gniusBackground = new Class({
 
         window.addEvents({
             domready : function(){
-                that.gniusBackground();
+                that.gniusBackground($(element));
             },
             resize   : function(){
-                that.gniusBackground();
+                that.gniusBackground($(element));
             }
         });
     },
 
-    gniusBackground : function(){
+    gniusBackground : function(element){
         var imageRatio  = this.options.width / this.options.height;
         var windowRatio = window.getSize().x / window.getSize().y;
+        var gniusImg    = element.getChildren()[0];
 
         //width of window is more than width of image
         if(windowRatio > imageRatio)
         {
-            $('gniusImg').setStyles(
+            gniusImg.setStyles(
             {
                 width    : window.getSize().x,
                 height   : window.getSize().x / imageRatio
@@ -58,16 +59,16 @@ var gniusBackground = new Class({
         //width of window is smaller than width of image
         else
         {
-            $('gniusImg').setStyles(
+            gniusImg.setStyles(
             {
                 width    : window.getSize().y / (1 / imageRatio),
                 height   : window.getSize().y
             });
         }
 
-        $('gniusBackground').setStyles({
-            'margin-top' : -($('gniusImg').getSize().y / 2) ,
-            'margin-left': -($('gniusImg').getSize().x / 2)
+        element.setStyles({
+            'margin-top' : -(gniusImg.getSize().y / 2),
+            'margin-left': -(gniusImg.getSize().x / 2)
         });
     }
 });
