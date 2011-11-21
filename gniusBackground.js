@@ -1,4 +1,4 @@
- /*
+/*
 ---
 
 script: gniusBackground.js
@@ -11,8 +11,7 @@ description: gniusBackground resizes the background image dependent on its aspec
 
 license: MIT-style license
 
-authors:
-- Ivan Ilić (http://www.gnius.at/)
+copyright: Copyright (c) Ivan Ilić (http://www.gnius.at/)
 
 requires:
 - core/Element.Dimensions
@@ -21,43 +20,54 @@ provides: [gniusBackground]
 
 ...
 */
+var gniusBackground = new Class({
+    Implements      : Options,
 
-window.addEvents({
-    domready    : function(){
-        gniusBackground();
+    options         : {
+        width  : 1440,
+        height : 900
     },
-    resize        : function(){
-        gniusBackground();
+
+    initialize      : function(element, options){
+        that = this;
+        this.setOptions(options);
+
+        window.addEvents({
+            domready : function(){
+                gniusBackground();
+            },
+            resize   : function(){
+                gniusBackground();
+            }
+        });
+    },
+
+    gniusBackground : function(){
+        var imageRatio  = this.options.width / this.options.height;
+        var windowRatio = window.getSize().x / window.getSize().y;
+
+        //width of window is more than width of image
+        if(windowRatio > imageRatio)
+        {
+            $('gniusImg').setStyles(
+            {
+                width    : window.getSize().x,
+                height   : window.getSize().x / imageRatio
+            });
+        }
+        //width of window is smaller than width of image
+        else
+        {
+            $('gniusImg').setStyles(
+            {
+                width    : window.getSize().y / (1 / imageRatio),
+                height   : window.getSize().y
+            });
+        }
+
+        $('gniusBackground').setStyles({
+            'margin-top' : -($('gniusImg').getSize().y / 2) ,
+            'margin-left': -($('gniusImg').getSize().x / 2)
+        });
     }
 });
-
-function gniusBackground(){
-    var imageRatio = 1920 / 1020;
-    var windowRatio = window.getSize().x / window.getSize().y;
-
-    //width of window is more than width of image
-    if(windowRatio > imageRatio)
-    {
-        $('background').setStyles(
-        {
-            width    : window.getSize().x,
-            height   : window.getSize().x / imageRatio
-        });
-    }
-    //width of window is smaller than width of image
-    else
-    {
-        $('background').setStyles(
-        {
-            width    : window.getSize().y / (1 / imageRatio),
-            height   : window.getSize().y
-        });
-    }
-
-    $('bg').setStyles({
-        'margin-top'    : (-$('background').getSize().y / 2) - 2,
-        'margin-left'   : -($('background').getStyle('width').toInt() / 2),
-        'height'        : $('background').getSize().y,
-        'width'         : (window.getSize().x + $('background').getSize().x) / 2
-    });
-}
