@@ -3,7 +3,7 @@
 
 script: gniusBackground.js
 
-version: 0.4.1
+version: 0.5.0
 
 name: gniusBackground
 
@@ -24,8 +24,9 @@ var gniusBackground = new Class({
     Implements      : Options,
 
     options         : {
-        width  : 1440,
-        height : 900
+        scrollable  : false,
+        width       : 1440,
+        height      : 900
     },
 
     initialize      : function(element, options){
@@ -48,27 +49,48 @@ var gniusBackground = new Class({
         var gniusImg    = element.getChildren()[0];
 
         //width of window is more than width of image
-        if(windowRatio > imageRatio)
-        {
-            gniusImg.setStyles(
-            {
+        if(windowRatio > imageRatio){
+            gniusImg.setStyles({
                 width    : window.getSize().x,
                 height   : window.getSize().x / imageRatio
             });
         }
         //width of window is smaller than width of image
-        else
-        {
-            gniusImg.setStyles(
-            {
+        else{
+            gniusImg.setStyles({
                 width    : window.getSize().y / (1 / imageRatio),
                 height   : window.getSize().y
             });
         }
 
-        element.setStyles({
-            'margin-top' : -(gniusImg.getSize().y / 2),
-            'margin-left': -(gniusImg.getSize().x / 2)
-        });
+        if(!this.options.scrollable){
+            /*
+             *  Set not scrollable Style behaviour.
+             */
+            element.setStyles({
+                'position'      : 'fixed',
+                'overflow'      : 'hidden',
+                'margin-top'    : -(gniusImg.getSize().y / 2),
+                'margin-left'   : -(gniusImg.getSize().x / 2)
+            });
+        }
+        else{
+            /*
+             *  Set scrollable Style behaviour.
+             */
+            
+            $('body').setStyles({
+                'overflow-x'    : 'hidden'
+            });
+
+            element.setStyles({
+                'position'      : 'absolute',
+                'overflow-x'    : 'hidden',
+                'margin-top'    : (-gniusImg.getSize().y / 2) - 1,
+                'margin-left'   : -(gniusImg.getStyle('width').toInt() / 2),
+                'height'        : gniusImg.getSize().y,
+                'width'         : (window.getSize().x + gniusImg.getSize().x) / 2
+            });
+        }
     }
 });
