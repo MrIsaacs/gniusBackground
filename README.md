@@ -1,6 +1,8 @@
 How to use
 ----------
 
+Just add this Code below in each section and your gniusBackground will work.
+
 ###Javascript:
     new gniusBackground('myElement',{
         scrollable  : false,
