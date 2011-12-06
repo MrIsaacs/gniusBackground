@@ -1,4 +1,5 @@
-#How to use
+How to use
+----------
 
 ###Javascript:
     new gniusBackground('myElement',{
