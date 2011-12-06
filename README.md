@@ -2,8 +2,9 @@
 
 ###Javascript:
     new gniusBackground('myElement',{
-        width   : 894,
-        height  : 894
+        scrollable  : false,
+        width       : 894,
+        height      : 894
     });
 
 ###HTML:
@@ -12,10 +13,6 @@
     </div>
 
 ###CSS:
-    body{
-        margin    : 0;
-        padding    : 0;
-    }
     #gniusBackground{
         position    : fixed;
         top         : 50%;
