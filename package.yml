@@ -1,6 +1,5 @@
 name: gniusBackground
-description: gniusBackground provides a background in the same size as the browser is and the image always has its aspec ratio
 author:  MrIsaacs
-current:  0.5
+version: 0.5
 category: Effects 
 tags:  [background, resize, aspec ratio]
