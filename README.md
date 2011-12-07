@@ -1,7 +1,12 @@
+gniusBackground
+===========
+
+gniusBackground resizes the image in full-screen with aspec ratio depended on its browsers window size. It also has options to be scrollable or fixed.
+
 How to use
 ----------
 
-Just add this Code below in each section and your gniusBackground will work.
+Just add this Code below in each section.
 
 ###Javascript:
     new gniusBackground('myElement',{
