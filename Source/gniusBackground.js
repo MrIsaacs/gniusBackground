@@ -3,7 +3,7 @@
 
 script: gniusBackground.js
 
-version: 0.5
+version: 0.5.1
 
 name: gniusBackground
 
@@ -51,7 +51,7 @@ var gniusBackground = new Class({
         //width of window is more than width of image
         if(windowRatio > imageRatio){
             gniusImg.setStyles({
-                width    : window.getSize().x,
+                width    : window.getSize().x + 1,
                 height   : window.getSize().x / imageRatio
             });
         }
@@ -71,7 +71,7 @@ var gniusBackground = new Class({
                 'position'      : 'fixed',
                 'overflow'      : 'hidden',
                 'margin-top'    : -(gniusImg.getSize().y / 2),
-                'margin-left'   : -(gniusImg.getSize().x / 2)
+                'margin-left'   : -(gniusImg.getSize().x / 2) - 1
             });
         }
         else{
