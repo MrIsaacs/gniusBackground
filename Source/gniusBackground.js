@@ -3,11 +3,11 @@
 
 script: gniusBackground.js
 
-version: 0.5.1
+version: 0.5.2
 
 name: gniusBackground
 
-description: gniusBackground resizes the background image dependent on its aspec ratio and with centered to a focus point.
+description: gniusBackground resizes the background image depended on its aspec ratio and with centered to a focus point.
 
 authors: Ivan Ilić (MrIsaacs)
 
@@ -59,7 +59,7 @@ var gniusBackground = new Class({
         else{
             gniusImg.setStyles({
                 width    : window.getSize().y / (1 / imageRatio),
-                height   : window.getSize().y
+                height   : window.getSize().y + 1
             });
         }
 
@@ -70,7 +70,7 @@ var gniusBackground = new Class({
             element.setStyles({
                 'position'      : 'fixed',
                 'overflow'      : 'hidden',
-                'margin-top'    : -(gniusImg.getSize().y / 2),
+                'margin-top'    : -(gniusImg.getSize().y / 2) - 1,
                 'margin-left'   : -(gniusImg.getSize().x / 2) - 1
             });
         }
