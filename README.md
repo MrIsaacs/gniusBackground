@@ -3,6 +3,8 @@ gniusBackground
 
 gniusBackground resizes the image in full-screen with aspec ratio depended on its browsers window size. It also has options to be scrollable or fixed.
 
+![How it works](http://gnius.at/gniusBackground/gniusBackground.png)
+
 How to use
 ----------
 
@@ -27,6 +29,5 @@ Just add this Code below in each section.
     #myElement{
         top         : 50%;
         left        : 50%;
-        overflow    : hidden;
         z-index     : 1;
     }
