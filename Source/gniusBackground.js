@@ -78,7 +78,6 @@ var gniusBackground = new Class({
             /*
              *  Set scrollable Style behaviour.
              */
-            
             $('body').setStyles({
                 'overflow-x'    : 'hidden'
             });
