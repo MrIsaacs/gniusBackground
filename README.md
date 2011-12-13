@@ -33,4 +33,4 @@ Just add this Code below in each section.
 Screenshots
 -----------
 
-![gniusBackgroun](http://gnius.at/gniusBackground/gniusBackground.png)
+![gniusBackground](http://gnius.at/gniusBackground/gniusBackground.png)
