@@ -20,6 +20,7 @@ provides: [gniusBackground]
 
 ...
 */
+
 var gniusBackground = new Class({
     Implements      : Options,
 
@@ -29,43 +30,41 @@ var gniusBackground = new Class({
         height      : 900
     },
 
-    initialize      : function(element, options){
-        that = this;
+    initialize      : function (element, options) {
+        var that = this;
         this.setOptions(options);
 
         window.addEvents({
-            domready : function(){
+            domready    : function () {
                 that.gniusBackground($(element));
             },
-            resize   : function(){
+            resize      : function () {
                 that.gniusBackground($(element));
             }
         });
     },
 
-    gniusBackground : function(element){
-        var imageRatio  = this.options.width / this.options.height;
-        var windowRatio = window.getSize().x / window.getSize().y;
-        var gniusImg    = element.getChildren()[0];
+    gniusBackground : function (element) {
+        var imageRatio = this.options.width / this.options.height,
+            windowRatio = window.getSize().x / window.getSize().y,
+            gniusImg = element.getChildren()[0];
 
         //width of window is more than width of image
-        if(windowRatio > imageRatio){
+        if (windowRatio > imageRatio) {
             gniusImg.setStyles({
-                width    : window.getSize().x + 1,
-                height   : window.getSize().x / imageRatio
+                width : window.getSize().x + 1,
+                height : window.getSize().x / imageRatio
             });
-        }
-        //width of window is smaller than width of image
-        else{
+        } else {
             gniusImg.setStyles({
-                width    : window.getSize().y / (1 / imageRatio),
-                height   : window.getSize().y + 1
+                width : window.getSize().y / (1 / imageRatio),
+                height : window.getSize().y + 1
             });
         }
 
-        if(!this.options.scrollable){
+        if (!this.options.scrollable) {
             /*
-             *  Set not scrollable Style behaviour.
+             * Set not scrollable Style behaviour.
              */
             element.setStyles({
                 'position'      : 'fixed',
@@ -73,13 +72,13 @@ var gniusBackground = new Class({
                 'margin-top'    : -(gniusImg.getSize().y / 2) - 1,
                 'margin-left'   : -(gniusImg.getSize().x / 2) - 1
             });
-        }
-        else{
+        } else {
             /*
-             *  Set scrollable Style behaviour.
+             * Set scrollable Style behaviour.
              */
+
             $('body').setStyles({
-                'overflow-x'    : 'hidden'
+                'overflow-x' : 'hidden'
             });
 
             element.setStyles({
