@@ -1,8 +1,6 @@
 /*
 ---
 
-script: gniusBackground.js
-
 version: 0.5.2
 
 name: gniusBackground
