@@ -7,7 +7,7 @@ name: gniusBackground
 
 description: gniusBackground resizes the background image depended on its aspec ratio and with centered to a focus point.
 
-authors: Ivan Ilić (MrIsaacs)
+authors: Ivan Ilic (MrIsaacs)
 
 license: MIT-style license
 
