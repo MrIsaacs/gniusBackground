@@ -12,7 +12,7 @@ authors: Ivan Ilić (MrIsaacs)
 license: MIT-style license
 
 requires:
-- core/Element.Dimensions
+- core/1.4.1: Dimensions
 
 provides: gniusBackground
 
