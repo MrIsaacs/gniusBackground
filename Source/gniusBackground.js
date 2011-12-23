@@ -14,7 +14,7 @@ license: MIT-style license
 requires:
 - core/Element.Dimensions
 
-provides: [gniusBackground]
+provides: gniusBackground
 
 ...
 */
