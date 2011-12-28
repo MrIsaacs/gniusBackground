@@ -1,7 +1,7 @@
 /*
 ---
 
-version: 0.5.2
+version: 0.5.3
 
 name: gniusBackground
 
@@ -85,7 +85,7 @@ var gniusBackground = new Class({
                 'margin-top'    : (-gniusImg.getSize().y / 2) - 1,
                 'margin-left'   : -(gniusImg.getStyle('width').toInt() / 2),
                 'height'        : gniusImg.getSize().y,
-                'width'         : (window.getSize().x + gniusImg.getSize().x) / 2
+                'width'         : ((window.getSize().x + gniusImg.getSize().x) / 2) + 1
             });
         }
     }
