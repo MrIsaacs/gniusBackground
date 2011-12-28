@@ -1,7 +1,7 @@
 /*
 ---
 
-version: 0.5.3
+version: 0.5.4
 
 name: gniusBackground
 
@@ -43,20 +43,20 @@ var gniusBackground = new Class({
     },
 
     gniusBackground : function (element) {
-        var imageRatio = this.options.width / this.options.height,
+        var imageRatio  = this.options.width / this.options.height,
             windowRatio = window.getSize().x / window.getSize().y,
-            gniusImg = element.getChildren()[0];
+            gniusImg    = element.getChildren()[0];
 
         //width of window is more than width of image
         if (windowRatio > imageRatio) {
             gniusImg.setStyles({
-                width : window.getSize().x + 1,
-                height : window.getSize().x / imageRatio
+                width   : window.getSize().x + 1,
+                height  : window.getSize().x / imageRatio
             });
         } else {
             gniusImg.setStyles({
-                width : window.getSize().y / (1 / imageRatio),
-                height : window.getSize().y + 1
+                width   : (window.getSize().y / (1 / imageRatio)) + 1,
+                height  : window.getSize().y + 1
             });
         }
 
@@ -76,7 +76,7 @@ var gniusBackground = new Class({
              */
 
             $('body').setStyles({
-                'overflow-x' : 'hidden'
+                'overflow-x'    : 'hidden'
             });
 
             element.setStyles({
