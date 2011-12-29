@@ -3,13 +3,11 @@
 
 version: 0.5.4
 
-name: gniusBackground
-
 description: gniusBackground resizes the background image depended on its aspec ratio and with centered to a focus point.
 
-authors: Ivan Ilic (MrIsaacs)
+authors: Ivan Ilic
 
-license: MIT-style license
+license: MIT-style
 
 requires:
 - core/1.4.1: Dimensions
