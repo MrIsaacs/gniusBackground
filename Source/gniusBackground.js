@@ -1,11 +1,11 @@
 /*
 ---
 
-version: 0.5.4
+version: 0.5.5
 
 description: gniusBackground resizes the background image depended on its aspec ratio and with centered to a focus point.
 
-authors: Ivan Ilic
+authors: Ivan Ilić
 
 license: MIT-style
 
@@ -48,12 +48,12 @@ var gniusBackground = new Class({
         //width of window is more than width of image
         if (windowRatio > imageRatio) {
             gniusImg.setStyles({
-                width   : window.getSize().x + 1,
+                width   : window.getSize().x + 2,
                 height  : window.getSize().x / imageRatio
             });
         } else {
             gniusImg.setStyles({
-                width   : (window.getSize().y / (1 / imageRatio)) + 1,
+                width   : window.getSize().y / (1 / imageRatio),
                 height  : window.getSize().y + 1
             });
         }
