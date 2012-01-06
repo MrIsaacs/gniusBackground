@@ -10,8 +10,8 @@ authors:
 requires:
   - core/1.4.1: Dimensions
 
-provides: [gniusBackground]
-
+provides: 
+  - gniusBackground
 ...
 */
 
