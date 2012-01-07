@@ -5,7 +5,7 @@ description: Resizes the "background-image" depended on its aspec ratio and with
 license: MIT-style
 
 authors:
-- Ivan Ilić
+- Ivan Ilic
 
 requires:
   - core/1.4.1: Dimensions
