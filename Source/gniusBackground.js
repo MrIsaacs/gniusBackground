@@ -5,7 +5,7 @@ description: Resizes the "background-image" depended on its aspec ratio and with
 license: MIT-style
 
 authors:
-- Ivan Ilic
+- Ivan Ilić
 
 requires:
   - core/1.4.1: Dimensions
@@ -57,9 +57,7 @@ var gniusBackground = new Class({
         }
 
         if (!this.options.scrollable) {
-            /*
-             * Set not scrollable Style behaviour.
-             */
+            // Set not scrollable Style behaviour.
             element.setStyles({
                 'position'      : 'fixed',
                 'overflow'      : 'hidden',
@@ -67,10 +65,7 @@ var gniusBackground = new Class({
                 'margin-left'   : -(gniusImg.getSize().x / 2) - 1
             });
         } else {
-            /*
-             * Set scrollable Style behaviour.
-             */
-
+            // Set scrollable Style behaviour.
             $('body').setStyles({
                 'overflow-x'    : 'hidden'
             });
