@@ -30,4 +30,4 @@ Just add this Code below in each section.
         top         : 50%;
         left        : 50%;
         z-index     : 1;
-    }
+   }
