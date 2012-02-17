@@ -3,7 +3,7 @@ gniusBackground
 
 gniusBackground resizes the image in full-screen with aspec ratio depended on its browsers window size. It also has options to be scrollable or fixed.
 
-![Screenshot](http://gnius.at/gniusBackground/gniusBackground.png)
+![Screenshot](http://gnius.at/gniusBackground/gniusBackground.jpg)
 
 How to use
 ----------
