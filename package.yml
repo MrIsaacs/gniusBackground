@@ -1,8 +1,6 @@
 name: gniusBackground
 author: MrIsaacs
-current: 0.5.7
+current: 0.5.5
 category: Effects
-tags: [upload, html5, file, "drag and drop"]
-license: MIT
-description: HTML5 Upload for multiple files
-demo: http://aryweb.nl/projects/mootools-form-upload/Demos/Upload.html
+tags: [background, resize, "aspec ratio"]
+demo: http://gnius.at/gniusBackground/
