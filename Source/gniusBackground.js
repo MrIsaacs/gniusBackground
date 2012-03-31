@@ -51,8 +51,8 @@ var gniusBackground = new Class({
             });
         } else {
             gniusImg.setStyles({
-                width   : window.getSize().y / (1 / imageRatio),
-                height  : window.getSize().y + 1
+                width   : window.getSize().y / (1 / imageRatio) + 2,
+                height  : window.getSize().y + 2
             });
         }
 
@@ -63,10 +63,12 @@ var gniusBackground = new Class({
                 'overflow'      : 'hidden',
                 'margin-top'    : -(gniusImg.getSize().y / 2) - 1,
                 'margin-left'   : -(gniusImg.getSize().x / 2) - 1
+                'height'        : gniusImg.getSize().y,
+                'width'         : ((window.getSize().x + gniusImg.getSize().x) / 2) + 2
             });
         } else {
             // Set scrollable Style behaviour.
-            $('body').setStyles({
+            $(document.body).setStyles({
                 'overflow-x'    : 'hidden'
             });
 
@@ -74,9 +76,9 @@ var gniusBackground = new Class({
                 'position'      : 'absolute',
                 'overflow-x'    : 'hidden',
                 'margin-top'    : (-gniusImg.getSize().y / 2) - 1,
-                'margin-left'   : -(gniusImg.getStyle('width').toInt() / 2),
+                'margin-left'   : -(gniusImg.getStyle('width').toInt() / 2) - 1,
                 'height'        : gniusImg.getSize().y,
-                'width'         : ((window.getSize().x + gniusImg.getSize().x) / 2) + 1
+                'width'         : ((window.getSize().x + gniusImg.getSize().x) / 2) + 2
             });
         }
     }
