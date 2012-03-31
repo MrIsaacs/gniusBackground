@@ -62,7 +62,7 @@ var gniusBackground = new Class({
                 'position'      : 'fixed',
                 'overflow'      : 'hidden',
                 'margin-top'    : -(gniusImg.getSize().y / 2) - 1,
-                'margin-left'   : -(gniusImg.getSize().x / 2) - 1
+                'margin-left'   : -(gniusImg.getSize().x / 2) - 1,
                 'height'        : gniusImg.getSize().y,
                 'width'         : ((window.getSize().x + gniusImg.getSize().x) / 2) + 2
             });
